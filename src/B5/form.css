@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+form {
+    width: 500px;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    border: black;
+    border-style: solid;
+    border-width: 3px;
+}
+
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    background-color: orangered;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+div.title {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+p {
+    width: 100px;
+    text-align: right;
+    padding-right: 5px;
+    color: blue;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+    color: orange;
+}
+
+div.btn {
+    margin-left: 100px;
+}
+
+input.btn {
+    padding: 5px 5px;
+}
