@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <label for="amount">Amount</label>
+    <input type="number" name="amount" id="amount">
+    <br>
+    <br>
+    <label for="fromCurrency">From Currency</label>
+    <select name="fromCurrency" id="fromCurrency">
+        <option value='1'>VND</option>
+        <option value='23427.029' selected>USD</option>
+        <option value='174.26507'>JPY</option>
+    </select>
+    <br>
+    <br>
+    <label for="toCurrency">To Currency</label>
+    <select name="toCurrency" id="toCurrency">
+        <option value='1' selected>VND</option>
+        <option value='23427.029'>USD</option>
+        <option value='174.26507'>JPY</option>
+    </select>
+    <br>
+    <br>
+    <button type="submit" id="convert">Convert</button>
+    <p id="result"></p>
+
+<script>
+    let amount = document.getElementById('amount');
+    let fromCurrency = document.getElementById('fromCurrency');
+    let toCurrency = document.getElementById('toCurrency');
+    let convertButton = document.getElementById('convert');
+
+    convertButton.addEventListener('click', doConvert);
+
+    console.log("value: " + amount.value);
+
+    function doConvert() {
+
+        let kq = amount.value * fromCurrency.value / toCurrency.value;
+        let str = document.documentElement.innerHTML;
+
+        document.write(kq);
+        document.documentElement.innerHTML = str + kq;
+
+    }
+
+</script>
+
+
+</body>
+</html>

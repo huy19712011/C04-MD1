@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<form action="" method="get">-->
+    <label for="">Amount</label>
+    <input type="number" name="amount" id="amount">
+    <br>
+    <br>
+    <label for="">From Currency</label>
+    <select name="fromCurrency" id="fromCurrency">
+        <option value='vnd'>VND</option>
+        <option value='usd'>USD</option>
+    </select>
+    <br>
+    <br>
+    <label for="">To Currency</label>
+    <select name="toCurrency" id="toCurrency">
+        <option value='vnd'>VND</option>
+        <option value='usd'>USD</option>
+    </select>
+    <br>
+    <br>
+    <button type="submit" id="convert">Convert</button>
+    <p id="result"></p>
+<!--</form>-->
+
+<script>
+    let amount = document.getElementById('amount');
+    amount.addEventListener('change', getAmount);
+    let valueAmount;
+
+    function getAmount() {
+        valueAmount = amount.value;
+    }
+
+    const exchangeRate = 23_000;
+
+    let fromCurrency = document.getElementById('fromCurrency');
+    fromCurrency.addEventListener('change', getFromCurrency);
+    let valueFromCurrency;
+
+    function getFromCurrency() {
+        valueFromCurrency = fromCurrency.value
+    }
+
+    let toCurrency = document.getElementById('toCurrency');
+    toCurrency.addEventListener('change', getToCurrency);
+    let valueToCurrency;
+
+    function getToCurrency() {
+        valueToCurrency = toCurrency.value
+    }
+
+    let convertButton = document.getElementById('convert');
+    convertButton.addEventListener('click', doConvert);
+
+    function doConvert() {
+        getAmount();
+        getFromCurrency();
+        getToCurrency();
+        if (valueFromCurrency == 'vnd') {
+            if (valueToCurrency == 'vnd') {
+                document.writeln('Result: ' + valueAmount);
+            } else {
+                document.writeln('Result: ' + valueAmount / exchangeRate);
+            }
+        } else {
+            if (valueToCurrency == 'usd') {
+                document.writeln('Result: ' + valueAmount);
+            } else {
+                document.writeln('Result: ' + valueAmount * exchangeRate);
+            }
+        }
+    }
+
+</script>
+
+
+</body>
+</html>
