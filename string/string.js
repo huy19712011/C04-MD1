@@ -118,7 +118,11 @@ console.log(slice2);
 
 console.log(str.slice(2, 8));
 
-
+// const arr = [2, 2, 2, 2, 2, 4, 5, 5, 5, 9];
+const arr = ['a', 'c', 'd', 'x', 'y', 'z', 'c', 'a', 'b', 'a'];
+const result = arr.reduce((acc, curr) => (acc[curr] = (acc[curr] || 0) + 1, acc), {});
+const result2 = arr.reduce((acc, currentValue) => (acc[currentValue] = (acc[currentValue] || 0) + 1, acc), {});
+console.log(result2);
 
 
 
